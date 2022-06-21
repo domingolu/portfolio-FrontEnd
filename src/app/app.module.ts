@@ -11,6 +11,12 @@ import { AcercaComponent } from './components/acerca/acerca.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { EducacionComponent } from './components/educacion/educacion.component';
 
+// Import ng-circle-progress
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { SkillsComponent } from './components/skills/skills.component';
+import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { FooterComponent } from './components/footer/footer.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,12 +26,36 @@ import { EducacionComponent } from './components/educacion/educacion.component';
     BannerComponent,
     AcercaComponent,
     ExperienciaComponent,
-    EducacionComponent
+    EducacionComponent,
+    SkillsComponent,
+    ProyectosComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+
+    // Specify ng-circle-progress as an import
+    NgCircleProgressModule.forRoot({/* set defaults here*/
+      "backgroundOpacity": 1,
+      "backgroundPadding": 7,
+      "radius": 60,
+      "space": 2,
+      "outerStrokeWidth": 9,
+      "outerStrokeColor": "#808080",
+      "innerStrokeColor": "#e7e8ea",
+      "innerStrokeWidth": 1,
+      "titleFontSize": "12",
+      "subtitleFontSize": "15",
+      "animateTitle": false,
+      "animationDuration": 1000,
+      "showUnits": false,
+      "showSubtitle": true,
+      "responsive": false,
+      "lazy": true
+    })
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
